@@ -7,9 +7,7 @@ Replace REPOSLUG with your repo slug.
 ```bash
 cp test/.env.example test/.env
 npm i
-npm run dev:code
-# run in seperate tab/window
-npm run dev:server
+npm run dev
 open http://localhost:3000/
 ```
 
@@ -29,4 +27,3 @@ Goto https://app.keycdn.com/zones/purgeurl/$id and enter:
 ```
 
 If you change asset files be sure to purge those too.
-
