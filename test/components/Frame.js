@@ -22,9 +22,8 @@ css.global('div:focus', {
   outline: 'none',
 })
 
-// 'light' or 'dark' modes are available
-const Index = ({ children }) => (
-  <ColorContextProvider root colorSchemeKey='dark'>
+const Index = ({ children, dark }) => (
+  <ColorContextProvider root colorSchemeKey={dark ? 'dark' : 'light'}>
     {children}
   </ColorContextProvider>
 )
