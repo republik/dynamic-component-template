@@ -1,11 +1,7 @@
 import React from 'react'
 import { css } from 'glamor'
 
-import {
-  fontFamilies,
-  colors,
-  ColorContext
-} from '@project-r/styleguide'
+import { fontFamilies, ColorContextProvider } from '@project-r/styleguide'
 
 import 'glamor/reset'
 
@@ -14,33 +10,23 @@ css.global('*, *:before, *:after', { boxSizing: 'inherit' })
 
 css.global('body', {
   width: '100%',
-  fontFamily: fontFamilies.sansSerifRegular
+  fontFamily: fontFamilies.sansSerifRegular,
 })
 
 // avoid gray rects over links and icons on iOS
 css.global('*', {
-  WebkitTapHighlightColor: 'transparent'
+  WebkitTapHighlightColor: 'transparent',
 })
 // avoid orange highlight, observed around full screen gallery, on Android
 css.global('div:focus', {
-  outline: 'none'
+  outline: 'none',
 })
 
-
-const Index = ({
-  children,
-  dark
-}) => (
-  <ColorContext.Provider value={dark && colors.negative}>
-    {dark && (
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `html, body { background-color: ${colors.negative.containerBg}; color: ${colors.negative.text}; }`
-        }}
-      />
-    )}
+// 'light' or 'dark' modes are available
+const Index = ({ children }) => (
+  <ColorContextProvider root colorSchemeKey='dark'>
     {children}
-  </ColorContext.Provider>
+  </ColorContextProvider>
 )
 
 export default Index
