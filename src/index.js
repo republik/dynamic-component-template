@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import { css } from 'glamor'
 import { mediaQueries } from '@project-r/styleguide'
 
-// const ASSETS_BASE_URL = 'https://cdn.repub.ch/s3/republik-assets/dynamic-components/REPOSLUG/asserts'
+// const ASSETS_BASE_URL = 'https://cdn.repub.ch/s3/republik-assets/dynamic-components/REPOSLUG/assets'
 
 const Index = ({ text }) => {
   return (
