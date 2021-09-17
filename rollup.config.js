@@ -7,19 +7,20 @@ import alias from 'rollup-plugin-alias'
 
 import { join } from 'path'
 
-export default [
-  ['index.js']
-].map(([entryFile, locale, outputFile]) => ({
+export default [['index.js']].map(([entryFile, locale, outputFile]) => ({
   input: join('src', entryFile),
   output: {
     file: join('build', outputFile || entryFile),
-    format: 'amd'
+    format: 'amd',
   },
   external: [
     // default
-    'react', 'prop-types', 'glamor',
-    '@project-r/styleguide', '@project-r/styleguide/chart',
-    'react-apollo', 'graphql-tag'
+    'react',
+    'prop-types',
+    'glamor',
+    '@project-r/styleguide',
+    '@project-r/styleguide/chart',
+    '@apollo/client'
   ],
   plugins: [
     // locale && replace({
@@ -31,18 +32,21 @@ export default [
       exclude: 'node_modules/**',
       presets: [
         '@babel/react',
-        ['@babel/env', {
-          'targets': {
-            'browsers': ['last 2 versions', 'safari >= 7']
+        [
+          '@babel/env',
+          {
+            targets: {
+              browsers: ['last 2 versions', 'safari >= 7'],
+            },
+            modules: false,
           },
-          'modules': false
-        }]
-      ]
+        ],
+      ],
     }),
     resolve(),
     commonjs(),
     replace({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    })
-  ].filter(Boolean)
+      'process.env.NODE_ENV': JSON.stringify('production'),
+    }),
+  ].filter(Boolean),
 }))
