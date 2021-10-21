@@ -24,6 +24,20 @@ Der grosse Oxmox riet ihr davon ab, da es dort wimmele von bösen Kommata, wilde
 
 <hr /></section>
 
+<section><h6>DYNAMIC_COMPONENT</h6>
+
+```
+{
+  "autoHtml": false,
+  "props": {
+    "text": "EMBDED Edge to Edge"
+  },
+  "src": "https://cdn.repub.ch/s3/republik-assets/dynamic-components/REPOSLUG/index.js"
+}
+```
+
+<hr /></section>
+
 <section><h6>CENTER</h6>
 
 Als es die ersten Hügel des Kursivgebirges erklommen hatte, warf es einen letzten Blick zurück auf die Skyline seiner Heimatstadt Buchstabhausen, die Headline von Alphabetdorf und die Subline seiner eigenen Straße, der Zeilengasse. Wehmütig lief ihm eine rhetorische Frage über die Wange, dann setzte es seinen Weg fort. Unterwegs traf es eine Copy.

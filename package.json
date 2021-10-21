@@ -1,5 +1,5 @@
 {
-  "name": "climate-action-tracker-map",
+  "name": "REPOSLUG",
   "version": "0.0.1",
   "description": "custom components for the story",
   "main": "index.js",
@@ -12,18 +12,18 @@
     "heroku-postbuild": "NODE_ENV=production rollup -c && cd test && next build",
     "start": "NODE_ENV=production cd test && node server.js",
     "translations": "gsheets --key= --title=de --pretty --out src/lib/translations.de.json",
-    "deploy": "s3cmd sync --exclude '.DS_Store' --verbose --acl-public build/ s3://republik-assets/dynamic-components/climate-action-tracker-map/"
+    "deploy": "s3cmd sync --exclude '.DS_Store' --verbose --acl-public build/ s3://republik-assets/dynamic-components/REPOSLUG/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/orbiting/climate-action-tracker-map.git"
+    "url": "git+https://github.com/orbiting/REPOSLUG.git"
   },
   "author": "",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/orbiting/climate-action-tracker-map/issues"
+    "url": "https://github.com/orbiting/REPOSLUG/issues"
   },
-  "homepage": "https://github.com/orbiting/climate-action-tracker-map#readme",
+  "homepage": "https://github.com/orbiting/REPOSLUG#readme",
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
