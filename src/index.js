@@ -1,10 +1,14 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { css } from 'glamor'
 import { mediaQueries } from '@project-r/styleguide'
+import ChartExample from './ChartExample'
 
 // const ASSETS_BASE_URL = 'https://cdn.repub.ch/s3/republik-assets/dynamic-components/REPOSLUG/assets'
 
-const Index = ({ text }) => {
+const Index = ({ type, text }) => {
+  if (type === 'ChartExample') {
+    return <ChartExample />
+  }
   return (
     <div
       {...css({

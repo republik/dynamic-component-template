@@ -48,7 +48,7 @@ Als es die ersten Hügel des Kursivgebirges erklommen hatte, warf es einen letzt
 {
   "autoHtml": false,
   "props": {
-    "text": "EMBDED Center"
+    "type": "ChartExample"
   },
   "src": "https://cdn.repub.ch/s3/republik-assets/dynamic-components/REPOSLUG/index.js"
 }
