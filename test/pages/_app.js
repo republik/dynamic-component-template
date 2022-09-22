@@ -1,24 +1,18 @@
-import App from 'next/app'
 import React from 'react'
-import { ApolloProvider } from 'react-apollo'
+import { ApolloProvider } from '@apollo/client'
+import Head from 'next/head'
 
-import withApolloClient from '../lib/apollo/withApolloClient'
+import initApollo from '../lib/apollo/initApollo'
 
-class WebApp extends App {
-  render() {
-    const {
-      Component,
-      pageProps,
-      apolloClient,
-      headers,
-      serverContext
-    } = this.props
-    return (
-      <ApolloProvider client={apolloClient}>
-        <Component serverContext={serverContext} {...pageProps} />
-      </ApolloProvider>
-    )
-  }
+const WebApp = ({ Component, pageProps }) => {
+  return (
+    <ApolloProvider client={initApollo()}>
+      <Head>
+        <meta name='viewport' content='width=device-width, initial-scale=1' />
+      </Head>
+      <Component {...pageProps} />
+    </ApolloProvider>
+  )
 }
 
-export default withApolloClient(WebApp)
+export default WebApp
