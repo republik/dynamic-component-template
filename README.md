@@ -11,6 +11,26 @@ npm run dev
 open http://localhost:3000/
 ```
 
+#### Remote Styleguide
+
+The styleguide from the `plattform` is available on S3 as a tar ball.
+
+The pattern is:
+```
+https://republik-assets-dev.s3.amazonaws.com/packages/project-r-styleguide-$BRANCH.tgz
+https://republik-assets-dev.s3.amazonaws.com/packages/project-r-styleguide-$BRANCH-$COMMIT.tgz
+```
+
+Commits need to pass styleguide tests to be uploaded. The upload is performed through a github action on push and can be inspected in case of issues.
+
+#### Local Styleguide
+
+You may also use a local styleguide, just use a realative path instead of the S3 url in `package.json`, e.g. like this:
+
+```
+../plattform/packages/styleguide
+```
+
 ### Deploy
 
 ```bash
