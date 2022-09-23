@@ -21,14 +21,21 @@ https://republik-assets-dev.s3.amazonaws.com/packages/project-r-styleguide-$BRAN
 https://republik-assets-dev.s3.amazonaws.com/packages/project-r-styleguide-$BRANCH-$COMMIT.tgz
 ```
 
-Commits need to pass styleguide tests to be uploaded. The upload is performed through a github action on push and can be inspected in case of issues.
+Make sure to run the install with legacy peer deps: `npm i --legacy-peer-deps`. If you want to update to the latest version of a branch without a commit id make sure to first clean your cache. For example installing the latest main commit:
+
+```bash
+npm cache clean -f
+npm i --legacy-peer-deps https://republik-assets-dev.s3.amazonaws.com/packages/project-r-styleguide-main.tgz
+```
+
+Commits need to pass styleguide tests to be uploaded. The upload is performed through a github action on push and can be inspected in case of issues, usually takes 3 minutes from pushing to beeing available on S3.
 
 #### Local Styleguide
 
-You may also use a local styleguide, just use a realative path instead of the S3 url in `package.json`, e.g. like this:
+You may also use a local styleguide, just use a realative path instead of the S3 url, e.g. like this:
 
 ```
-../plattform/packages/styleguide
+npm i ../plattform/packages/styleguide
 ```
 
 ### Deploy
