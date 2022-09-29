@@ -30,7 +30,7 @@
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
     "@orbiting/remark-preset": "^1.2.3",
-    "@project-r/styleguide": "https://republik-assets-dev.s3.amazonaws.com/plattform/project-r-styleguide-sg-for-dyn.tgz",
+    "@project-r/styleguide": "https://republik-assets-dev.s3.amazonaws.com/plattform/project-r-styleguide-main.tgz",
     "concurrently": "^5.2.0",
     "core-js": "^2.6.5",
     "d3-dsv": "^1.2.0",
