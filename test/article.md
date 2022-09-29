@@ -56,4 +56,20 @@ Als es die ersten Hügel des Kursivgebirges erklommen hatte, warf es einen letzt
 
 <hr /></section>
 
+## Datenabfrage
+
+<section><h6>DYNAMIC_COMPONENT</h6>
+
+```
+{
+  "autoHtml": false,
+  "props": {
+    "type": "Query"
+  },
+  "src": "https://cdn.repub.ch/s3/republik-assets/dynamic-components/REPOSLUG/index.js"
+}
+```
+
+<hr /></section>
+
 <hr /></section>

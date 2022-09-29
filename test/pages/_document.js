@@ -1,4 +1,5 @@
 import Document, {
+  Html,
   Head,
   Main,
   NextScript
@@ -26,12 +27,8 @@ export default class MyDocument extends Document {
   render () {
     const { css } = this.props
     return (
-      <html lang='de'>
+      <Html lang='de'>
         <Head>
-          <meta
-            name='viewport'
-            content='width=device-width,initial-scale=1'
-          />
           <meta
             httpEquiv='X-UA-Compatible'
             content='IE=edge'
@@ -53,7 +50,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     )
   }
 }

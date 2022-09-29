@@ -1,31 +1,15 @@
-import ApolloClient from 'apollo-client'
-import { ApolloLink } from 'apollo-link'
-import { HttpLink } from 'apollo-link-http'
-import { WebSocketLink } from 'apollo-link-ws'
-import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemory'
+import {
+  ApolloClient,
+  ApolloLink,
+  InMemoryCache,
+  HttpLink
+} from '@apollo/client'
+import { WebSocketLink } from '@apollo/client/link/ws'
 
-import fetch from 'isomorphic-unfetch'
-
-import {API_URL, API_WS_URL} from '../constants'
+import { API_URL, API_WS_URL } from '../constants'
+import possibleTypes from './possibleTypes.json'
 
 let apolloClient = null
-
-// Polyfill fetch() on the server (used by apollo-client)
-if (!process.browser) {
-  global.fetch = fetch
-}
-
-export const dataIdFromObject = object => {
-  if (object.__typename) {
-    if (object.id !== undefined) {
-      return `${object.__typename}:${object.id}`
-    }
-    if (object._id !== undefined) {
-      return `${object.__typename}:${object._id}`
-    }
-  }
-  return null
-}
 
 const hasSubscriptionOperation = ({ query: { definitions } }) =>
   definitions.some(
@@ -49,6 +33,7 @@ function create (initialState = {}, headers = {}) {
       new WebSocketLink({
         uri: API_WS_URL,
         options: {
+          lazy: true,
           reconnect: true,
           timeout: 50000
         }
@@ -60,7 +45,19 @@ function create (initialState = {}, headers = {}) {
   return new ApolloClient({
     connectToDevTools: process.browser,
     cache: new InMemoryCache({
-      dataIdFromObject
+      typePolicies: {
+        Meta: {
+          merge: true,
+        },
+        Discussion: {
+          fields: {
+            userPreference: {
+              merge: true,
+            },
+          },
+        },
+      },
+      possibleTypes,
     }).restore(initialState || {}),
     ssrMode: !process.browser, // Disables forceFetch on the server (so queries are only run once)
     link
