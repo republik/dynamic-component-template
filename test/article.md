@@ -35,29 +35,37 @@ Der grosse Oxmox riet ihr davon ab, da es dort wimmele von bösen Kommata, wilde
     "lead": "Wie kam er zu seiner Erkenntnis?",
     "phases": [
       {
-        "title": "Snow Karte",
+        "title": "Historische Einordnung",
          "step": "step1"
       },
       {
+        "title": "Erklärung roter Kreis",
+         "step": "step2"
+      },
+      {
         "title": "Cholera-Tote",
-        "step": "step2"
+        "step": "step3"
       },
       {
         "title": "Pumpstationen",
-        "step": "step3"
+        "step": "step4"
       }
     ],
     "translations": [
       {
         "key": "step1/text",
-        "value": "So zeichnete Snow die Karte"
+        "value": "was zeigt die Karte? Wann enstand die Karte?"
       },
       {
         "key": "step2/text",
-        "value": "Würde man das mit Punkte zeichnen, dann sieht es so aus."
+        "value": "Was bedeutet die Karte? Tote hervorheben?"
       },
       {
         "key": "step3/text",
+        "value": "Visualisierung mit Punkten machen, um die Verhältnisse besser zeigen zu können. Würde man das mit Punkte zeichnen, dann sieht es so aus."
+      },
+      {
+        "key": "step4/text",
         "value": "Und dann kann man noch die Pumpstationen dazu nehmen."
       }
     ],
@@ -67,7 +75,7 @@ Der grosse Oxmox riet ihr davon ab, da es dort wimmele von bösen Kommata, wilde
         "href": "http://www.bla.ch"
         }
   },
-  "src": "https://cdn.republik.space/s3/republik-assets/dynamic-components/inflation-basket/index.js"
+  "src": "https://cdn.republik.space/s3/republik-assets/dynamic-components/snow-map-interactive/index.js?v4"
 }
 ```
 
