@@ -1,5 +1,5 @@
 {
-  "name": "snow-map-interactive",
+  "name": "REPOSLUG",
   "version": "0.0.1",
   "description": "custom components for the story",
   "main": "index.js",
@@ -12,18 +12,18 @@
     "heroku-postbuild": "NODE_ENV=production rollup -c && cd test && next build",
     "start": "NODE_ENV=production cd test && node server.js",
     "translations": "gsheets --key= --title=de --pretty --out src/lib/translations.de.json",
-    "deploy": "s3cmd sync --exclude '.DS_Store' --verbose --acl-public build/ s3://republik-assets/dynamic-components/snow-map-interactive/"
+    "deploy": "s3cmd sync --exclude '.DS_Store' --verbose --acl-public build/ s3://republik-assets/dynamic-components/REPOSLUG/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/orbiting/snow-map-interactive.git"
+    "url": "git+https://github.com/orbiting/REPOSLUG.git"
   },
   "author": "",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/orbiting/snow-map-interactive/issues"
+    "url": "https://github.com/orbiting/REPOSLUG/issues"
   },
-  "homepage": "https://github.com/orbiting/snow-map-interactive#readme",
+  "homepage": "https://github.com/orbiting/REPOSLUG#readme",
   "devDependencies": {
     "@apollo/client": "~3.5.10",
     "@babel/core": "^7.10.5",
